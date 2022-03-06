@@ -1,0 +1,19 @@
+{
+  "name": "clientes_mongo",
+  "version": "1.0.0",
+  "description": "API Restful + MongoDB",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon ./index.js 0.0.0.0 3000"
+  },
+  "keywords": [
+    "mongodb",
+    "nodejs"
+  ],
+  "author": "Luiz Oliveira <luiiz.silverio@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongodb": "^4.4.1"
+  }
+}
