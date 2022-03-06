@@ -1,16 +1,16 @@
 const {MongoClient} = require('mongodb')
 
 // notesDb é o nome do banco de dados
-const url = "mongodb://localhost:27017"
-const dbName = "clientes"
+const url = "mongodb://localhost:27017/clientes"
+// const dbName = "clientes"
 
-let db;
+let _db;
 
 const initDb = (callback) => {
   MongoClient.connect(url, { useUnifiedTopology: true })
     .then((client) => {
-      db = client.db(dbName)
-      callback(null, db)
+      _db = client
+      callback(null, _db)
     })
     .catch((err) => {
       callback(err)
@@ -18,7 +18,7 @@ const initDb = (callback) => {
 }
 
 const getDb = () => {
-  return db
+  return _db
 }
 
 module.exports = {

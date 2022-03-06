@@ -6,6 +6,9 @@ const port = 3000
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+const routes = require('./routes')
+app.use(routes)
+
 // Banco de dados
 const db = require('./db/connection')
 
@@ -15,8 +18,8 @@ db.initDb((err, db) => {
     }
     else {
       console.log('Conectou no banco com sucesso')
-      app.listen(8000, () => {
-        console.log(`Notes_Mongo rodando na porta ${port}`)
+      app.listen(port, () => {
+        console.log(`Clientes_Mongo rodando na porta ${port}`)
       })
     }
   })
